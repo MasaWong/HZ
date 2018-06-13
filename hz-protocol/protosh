@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+INPUT=src/main/protobuf/
+OUTPUT=src/main/java/
+FILE=$1
+
+if [[ -z ${FILE} || ${FILE} -eq 'all' || ${FILE} -eq '*' || ${FILE} -eq 'any' ]]; then
+    echo "protoc compile ALL files"
+    ls ${INPUT} | xargs -t protoc --proto_path=${INPUT} --java_out=${OUTPUT}
+else
+    echo "protoc compile ${FILE}"
+    protoc --proto_path=${INPUT} --java_out=${OUTPUT} ${FILE}
+fi
