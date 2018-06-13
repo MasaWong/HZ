@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+option java_package = "cn.edu.bupt.hz.protobuf.generated";
+option java_outer_classname = "HProtos";
+option java_generate_equals_and_hash = true;
+option optimize_for = SPEED;
+
+message Request {
+    required string name = 1;
+}
+
+message Response {
+    required string state = 1;
+}

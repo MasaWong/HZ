@@ -1,35 +1,35 @@
-syntax = "proto3";
+syntax = "proto2";
 
 option java_package = "cn.edu.bupt.hz.protobuf.generated";
 option java_outer_classname = "HProtos";
-option java_generic_services = true;
 option java_generate_equals_and_hash = true;
 option optimize_for = SPEED;
 
 message Request {
+
     // RPC service full name
-    string service_name = 1;
+    required string service_name = 1;
 
     // RPC method name
-    string method_name = 2;
+    required string method_name = 2;
 
     // RPC request proto
-    bytes request_proto = 3;
+    required bytes request_proto = 3;
 }
 
 message Response {
 
     // RPC response proto
-    bytes response_proto = 1;
+    optional bytes response_proto = 1;
 
     // Error, if any
-    string error = 2;
+    optional string error = 2;
 
     // Was callback invoked
-    bool callback = 3;
+    optional bool callback = 3 [default = false];
 
     // Error Reason
-    ErrorReason error_reason = 4;
+    optional ErrorReason error_reason = 4;
 }
 
 // Possible error reasons
