@@ -4,2384 +4,2261 @@
 package cn.edu.bupt.hz.protobuf.generated;
 
 public final class HProtos {
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_Request_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_Request_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_Response_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_Response_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
+  private HProtos() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    static {
-        java.lang.String[] descriptorData = {
-                "\n\rHProtos.proto\"K\n\007Request\022\024\n\014service_na" +
-                        "me\030\001 \002(\t\022\023\n\013method_name\030\002 \002(\t\022\025\n\rrequest" +
-                        "_proto\030\003 \002(\014\"n\n\010Response\022\026\n\016response_pro" +
-                        "to\030\001 \001(\014\022\r\n\005error\030\002 \001(\t\022\027\n\010callback\030\003 \001(" +
-                        "\010:\005false\022\"\n\014error_reason\030\004 \001(\0162\014.ErrorRe" +
-                        "ason*\331\001\n\013ErrorReason\022\024\n\020BAD_REQUEST_DATA" +
-                        "\020\000\022\025\n\021BAD_REQUEST_PROTO\020\001\022\025\n\021SERVICE_NOT" +
-                        "_FOUND\020\002\022\024\n\020METHOD_NOT_FOUND\020\003\022\r\n\tRPC_ER" +
-                        "ROR\020\004\022\016\n\nRPC_FAILED\020\005\022\031\n\025INVALID_REQUEST" +
-                        "_PROTO\020\006\022\026\n\022BAD_RESPONSE_PROTO\020\007\022\020\n\014UNKN" +
-                        "OWN_HOST\020\010\022\014\n\010IO_ERROR\020\tB4\n!cn.edu.bupt." +
-                        "hz.protobuf.generatedB\007HProtosH\001\210\001\001\240\001\001"
-        };
-        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                            com.google.protobuf.Descriptors.FileDescriptor root) {
-                        descriptor = root;
-                        return null;
-                    }
-                };
-        com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        }, assigner);
-        internal_static_Request_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_Request_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_Request_descriptor,
-                new java.lang.String[]{"ServiceName", "MethodName", "RequestProto",});
-        internal_static_Response_descriptor =
-                getDescriptor().getMessageTypes().get(1);
-        internal_static_Response_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_Response_descriptor,
-                new java.lang.String[]{"ResponseProto", "Error", "Callback", "ErrorReason",});
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  /**
+   * <pre>
+   * Possible error reasons
+   * The server-side errors are returned in the response from the server.
+   * The client-side errors are returned by the client-side code when it doesn't
+   * have a response from the server.
+   * </pre>
+   *
+   * Protobuf enum {@code ErrorReason}
+   */
+  public enum ErrorReason
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Server-side errors
+     * </pre>
+     *
+     * <code>BAD_REQUEST_DATA = 0;</code>
+     */
+    BAD_REQUEST_DATA(0),
+    /**
+     * <pre>
+     * Server received bad request proto
+     * </pre>
+     *
+     * <code>BAD_REQUEST_PROTO = 1;</code>
+     */
+    BAD_REQUEST_PROTO(1),
+    /**
+     * <pre>
+     * Service not found on server
+     * </pre>
+     *
+     * <code>SERVICE_NOT_FOUND = 2;</code>
+     */
+    SERVICE_NOT_FOUND(2),
+    /**
+     * <pre>
+     * Method not found on server
+     * </pre>
+     *
+     * <code>METHOD_NOT_FOUND = 3;</code>
+     */
+    METHOD_NOT_FOUND(3),
+    /**
+     * <pre>
+     * Rpc threw exception on server
+     * </pre>
+     *
+     * <code>RPC_ERROR = 4;</code>
+     */
+    RPC_ERROR(4),
+    /**
+     * <pre>
+     * Rpc failed on server
+     * </pre>
+     *
+     * <code>RPC_FAILED = 5;</code>
+     */
+    RPC_FAILED(5),
+    /**
+     * <pre>
+     * Client-side errors (these are returned by the client-side code)
+     * </pre>
+     *
+     * <code>INVALID_REQUEST_PROTO = 6;</code>
+     */
+    INVALID_REQUEST_PROTO(6),
+    /**
+     * <pre>
+     * Server returned a bad response proto
+     * </pre>
+     *
+     * <code>BAD_RESPONSE_PROTO = 7;</code>
+     */
+    BAD_RESPONSE_PROTO(7),
+    /**
+     * <pre>
+     * Could not find supplied host
+     * </pre>
+     *
+     * <code>UNKNOWN_HOST = 8;</code>
+     */
+    UNKNOWN_HOST(8),
+    /**
+     * <pre>
+     * I/O error while communicating with server
+     * </pre>
+     *
+     * <code>IO_ERROR = 9;</code>
+     */
+    IO_ERROR(9),
+    ;
+
+    /**
+     * <pre>
+     * Server-side errors
+     * </pre>
+     *
+     * <code>BAD_REQUEST_DATA = 0;</code>
+     */
+    public static final int BAD_REQUEST_DATA_VALUE = 0;
+    /**
+     * <pre>
+     * Server received bad request proto
+     * </pre>
+     *
+     * <code>BAD_REQUEST_PROTO = 1;</code>
+     */
+    public static final int BAD_REQUEST_PROTO_VALUE = 1;
+    /**
+     * <pre>
+     * Service not found on server
+     * </pre>
+     *
+     * <code>SERVICE_NOT_FOUND = 2;</code>
+     */
+    public static final int SERVICE_NOT_FOUND_VALUE = 2;
+    /**
+     * <pre>
+     * Method not found on server
+     * </pre>
+     *
+     * <code>METHOD_NOT_FOUND = 3;</code>
+     */
+    public static final int METHOD_NOT_FOUND_VALUE = 3;
+    /**
+     * <pre>
+     * Rpc threw exception on server
+     * </pre>
+     *
+     * <code>RPC_ERROR = 4;</code>
+     */
+    public static final int RPC_ERROR_VALUE = 4;
+    /**
+     * <pre>
+     * Rpc failed on server
+     * </pre>
+     *
+     * <code>RPC_FAILED = 5;</code>
+     */
+    public static final int RPC_FAILED_VALUE = 5;
+    /**
+     * <pre>
+     * Client-side errors (these are returned by the client-side code)
+     * </pre>
+     *
+     * <code>INVALID_REQUEST_PROTO = 6;</code>
+     */
+    public static final int INVALID_REQUEST_PROTO_VALUE = 6;
+    /**
+     * <pre>
+     * Server returned a bad response proto
+     * </pre>
+     *
+     * <code>BAD_RESPONSE_PROTO = 7;</code>
+     */
+    public static final int BAD_RESPONSE_PROTO_VALUE = 7;
+    /**
+     * <pre>
+     * Could not find supplied host
+     * </pre>
+     *
+     * <code>UNKNOWN_HOST = 8;</code>
+     */
+    public static final int UNKNOWN_HOST_VALUE = 8;
+    /**
+     * <pre>
+     * I/O error while communicating with server
+     * </pre>
+     *
+     * <code>IO_ERROR = 9;</code>
+     */
+    public static final int IO_ERROR_VALUE = 9;
+
+
+    public final int getNumber() {
+      return value;
     }
 
-    private HProtos() {
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ErrorReason valueOf(int value) {
+      return forNumber(value);
     }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistryLite registry) {
+    public static ErrorReason forNumber(int value) {
+      switch (value) {
+        case 0: return BAD_REQUEST_DATA;
+        case 1: return BAD_REQUEST_PROTO;
+        case 2: return SERVICE_NOT_FOUND;
+        case 3: return METHOD_NOT_FOUND;
+        case 4: return RPC_ERROR;
+        case 5: return RPC_FAILED;
+        case 6: return INVALID_REQUEST_PROTO;
+        case 7: return BAD_RESPONSE_PROTO;
+        case 8: return UNKNOWN_HOST;
+        case 9: return IO_ERROR;
+        default: return null;
+      }
     }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions(
-                (com.google.protobuf.ExtensionRegistryLite) registry);
+    public static com.google.protobuf.Internal.EnumLiteMap<ErrorReason>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ErrorReason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ErrorReason>() {
+            public ErrorReason findValueByNumber(int number) {
+              return ErrorReason.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return cn.edu.bupt.hz.protobuf.generated.HProtos.getDescriptor().getEnumTypes().get(0);
     }
 
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
+    private static final ErrorReason[] VALUES = values();
+
+    public static ErrorReason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ErrorReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ErrorReason)
+  }
+
+  public interface RequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Request)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * RPC service full name
+     * </pre>
+     *
+     * <code>required string service_name = 1;</code>
+     */
+    boolean hasServiceName();
+    /**
+     * <pre>
+     * RPC service full name
+     * </pre>
+     *
+     * <code>required string service_name = 1;</code>
+     */
+    java.lang.String getServiceName();
+    /**
+     * <pre>
+     * RPC service full name
+     * </pre>
+     *
+     * <code>required string service_name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getServiceNameBytes();
+
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    boolean hasMethodName();
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    java.lang.String getMethodName();
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMethodNameBytes();
+
+    /**
+     * <pre>
+     * RPC request proto
+     * </pre>
+     *
+     * <code>required bytes request_proto = 3;</code>
+     */
+    boolean hasRequestProto();
+    /**
+     * <pre>
+     * RPC request proto
+     * </pre>
+     *
+     * <code>required bytes request_proto = 3;</code>
+     */
+    com.google.protobuf.ByteString getRequestProto();
+  }
+  /**
+   * Protobuf type {@code Request}
+   */
+  public  static final class Request extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Request)
+      RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Request.newBuilder() to construct.
+    private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Request() {
+      serviceName_ = "";
+      methodName_ = "";
+      requestProto_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              serviceName_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              methodName_ = bs;
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              requestProto_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cn.edu.bupt.hz.protobuf.generated.HProtos.Request.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Request.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SERVICE_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object serviceName_;
+    /**
+     * <pre>
+     * RPC service full name
+     * </pre>
+     *
+     * <code>required string service_name = 1;</code>
+     */
+    public boolean hasServiceName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
-     * Possible error reasons
-     * The server-side errors are returned in the response from the server.
-     * The client-side errors are returned by the client-side code when it doesn't
-     * have a response from the server.
+     * RPC service full name
      * </pre>
-     * <p>
-     * Protobuf enum {@code ErrorReason}
+     *
+     * <code>required string service_name = 1;</code>
      */
-    public enum ErrorReason
-            implements com.google.protobuf.ProtocolMessageEnum {
-        /**
-         * <pre>
-         * Server-side errors
-         * </pre>
-         * <p>
-         * <code>BAD_REQUEST_DATA = 0;</code>
-         */
-        BAD_REQUEST_DATA(0),
-        /**
-         * <pre>
-         * Server received bad request proto
-         * </pre>
-         * <p>
-         * <code>BAD_REQUEST_PROTO = 1;</code>
-         */
-        BAD_REQUEST_PROTO(1),
-        /**
-         * <pre>
-         * Service not found on server
-         * </pre>
-         * <p>
-         * <code>SERVICE_NOT_FOUND = 2;</code>
-         */
-        SERVICE_NOT_FOUND(2),
-        /**
-         * <pre>
-         * Method not found on server
-         * </pre>
-         * <p>
-         * <code>METHOD_NOT_FOUND = 3;</code>
-         */
-        METHOD_NOT_FOUND(3),
-        /**
-         * <pre>
-         * Rpc threw exception on server
-         * </pre>
-         * <p>
-         * <code>RPC_ERROR = 4;</code>
-         */
-        RPC_ERROR(4),
-        /**
-         * <pre>
-         * Rpc failed on server
-         * </pre>
-         * <p>
-         * <code>RPC_FAILED = 5;</code>
-         */
-        RPC_FAILED(5),
-        /**
-         * <pre>
-         * Client-side errors (these are returned by the client-side code)
-         * </pre>
-         * <p>
-         * <code>INVALID_REQUEST_PROTO = 6;</code>
-         */
-        INVALID_REQUEST_PROTO(6),
-        /**
-         * <pre>
-         * Server returned a bad response proto
-         * </pre>
-         * <p>
-         * <code>BAD_RESPONSE_PROTO = 7;</code>
-         */
-        BAD_RESPONSE_PROTO(7),
-        /**
-         * <pre>
-         * Could not find supplied host
-         * </pre>
-         * <p>
-         * <code>UNKNOWN_HOST = 8;</code>
-         */
-        UNKNOWN_HOST(8),
-        /**
-         * <pre>
-         * I/O error while communicating with server
-         * </pre>
-         * <p>
-         * <code>IO_ERROR = 9;</code>
-         */
-        IO_ERROR(9),;
-
-        /**
-         * <pre>
-         * Server-side errors
-         * </pre>
-         * <p>
-         * <code>BAD_REQUEST_DATA = 0;</code>
-         */
-        public static final int BAD_REQUEST_DATA_VALUE = 0;
-        /**
-         * <pre>
-         * Server received bad request proto
-         * </pre>
-         * <p>
-         * <code>BAD_REQUEST_PROTO = 1;</code>
-         */
-        public static final int BAD_REQUEST_PROTO_VALUE = 1;
-        /**
-         * <pre>
-         * Service not found on server
-         * </pre>
-         * <p>
-         * <code>SERVICE_NOT_FOUND = 2;</code>
-         */
-        public static final int SERVICE_NOT_FOUND_VALUE = 2;
-        /**
-         * <pre>
-         * Method not found on server
-         * </pre>
-         * <p>
-         * <code>METHOD_NOT_FOUND = 3;</code>
-         */
-        public static final int METHOD_NOT_FOUND_VALUE = 3;
-        /**
-         * <pre>
-         * Rpc threw exception on server
-         * </pre>
-         * <p>
-         * <code>RPC_ERROR = 4;</code>
-         */
-        public static final int RPC_ERROR_VALUE = 4;
-        /**
-         * <pre>
-         * Rpc failed on server
-         * </pre>
-         * <p>
-         * <code>RPC_FAILED = 5;</code>
-         */
-        public static final int RPC_FAILED_VALUE = 5;
-        /**
-         * <pre>
-         * Client-side errors (these are returned by the client-side code)
-         * </pre>
-         * <p>
-         * <code>INVALID_REQUEST_PROTO = 6;</code>
-         */
-        public static final int INVALID_REQUEST_PROTO_VALUE = 6;
-        /**
-         * <pre>
-         * Server returned a bad response proto
-         * </pre>
-         * <p>
-         * <code>BAD_RESPONSE_PROTO = 7;</code>
-         */
-        public static final int BAD_RESPONSE_PROTO_VALUE = 7;
-        /**
-         * <pre>
-         * Could not find supplied host
-         * </pre>
-         * <p>
-         * <code>UNKNOWN_HOST = 8;</code>
-         */
-        public static final int UNKNOWN_HOST_VALUE = 8;
-        /**
-         * <pre>
-         * I/O error while communicating with server
-         * </pre>
-         * <p>
-         * <code>IO_ERROR = 9;</code>
-         */
-        public static final int IO_ERROR_VALUE = 9;
-        private static final com.google.protobuf.Internal.EnumLiteMap<
-                ErrorReason> internalValueMap =
-                new com.google.protobuf.Internal.EnumLiteMap<ErrorReason>() {
-                    public ErrorReason findValueByNumber(int number) {
-                        return ErrorReason.forNumber(number);
-                    }
-                };
-        private static final ErrorReason[] VALUES = values();
-        private final int value;
-
-        private ErrorReason(int value) {
-            this.value = value;
+    public java.lang.String getServiceName() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          serviceName_ = s;
         }
-
-        /**
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
-        @java.lang.Deprecated
-        public static ErrorReason valueOf(int value) {
-            return forNumber(value);
-        }
-
-        public static ErrorReason forNumber(int value) {
-            switch (value) {
-                case 0:
-                    return BAD_REQUEST_DATA;
-                case 1:
-                    return BAD_REQUEST_PROTO;
-                case 2:
-                    return SERVICE_NOT_FOUND;
-                case 3:
-                    return METHOD_NOT_FOUND;
-                case 4:
-                    return RPC_ERROR;
-                case 5:
-                    return RPC_FAILED;
-                case 6:
-                    return INVALID_REQUEST_PROTO;
-                case 7:
-                    return BAD_RESPONSE_PROTO;
-                case 8:
-                    return UNKNOWN_HOST;
-                case 9:
-                    return IO_ERROR;
-                default:
-                    return null;
-            }
-        }
-
-        public static com.google.protobuf.Internal.EnumLiteMap<ErrorReason>
-        internalGetValueMap() {
-            return internalValueMap;
-        }
-
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-            return cn.edu.bupt.hz.protobuf.generated.HProtos.getDescriptor().getEnumTypes().get(0);
-        }
-
-        public static ErrorReason valueOf(
-                com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-                throw new java.lang.IllegalArgumentException(
-                        "EnumValueDescriptor is not for this type.");
-            }
-            return VALUES[desc.getIndex()];
-        }
-
-        public final int getNumber() {
-            return value;
-        }
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-            return getDescriptor().getValues().get(ordinal());
-        }
-
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-            return getDescriptor();
-        }
-
-        // @@protoc_insertion_point(enum_scope:ErrorReason)
+        return s;
+      }
     }
-    public interface RequestOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:Request)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        boolean hasServiceName();
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        java.lang.String getServiceName();
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        com.google.protobuf.ByteString
-        getServiceNameBytes();
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        boolean hasMethodName();
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        java.lang.String getMethodName();
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        com.google.protobuf.ByteString
-        getMethodNameBytes();
-
-        /**
-         * <pre>
-         * RPC request proto
-         * </pre>
-         * <p>
-         * <code>required bytes request_proto = 3;</code>
-         */
-        boolean hasRequestProto();
-
-        /**
-         * <pre>
-         * RPC request proto
-         * </pre>
-         * <p>
-         * <code>required bytes request_proto = 3;</code>
-         */
-        com.google.protobuf.ByteString getRequestProto();
+    /**
+     * <pre>
+     * RPC service full name
+     * </pre>
+     *
+     * <code>required string service_name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServiceNameBytes() {
+      java.lang.Object ref = serviceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public interface ResponseOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:Response)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <pre>
-         * RPC response proto
-         * </pre>
-         * <p>
-         * <code>optional bytes response_proto = 1;</code>
-         */
-        boolean hasResponseProto();
-
-        /**
-         * <pre>
-         * RPC response proto
-         * </pre>
-         * <p>
-         * <code>optional bytes response_proto = 1;</code>
-         */
-        com.google.protobuf.ByteString getResponseProto();
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        boolean hasError();
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        java.lang.String getError();
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        com.google.protobuf.ByteString
-        getErrorBytes();
-
-        /**
-         * <pre>
-         * Was callback invoked
-         * </pre>
-         * <p>
-         * <code>optional bool callback = 3 [default = false];</code>
-         */
-        boolean hasCallback();
-
-        /**
-         * <pre>
-         * Was callback invoked
-         * </pre>
-         * <p>
-         * <code>optional bool callback = 3 [default = false];</code>
-         */
-        boolean getCallback();
-
-        /**
-         * <pre>
-         * Error Reason
-         * </pre>
-         * <p>
-         * <code>optional .ErrorReason error_reason = 4;</code>
-         */
-        boolean hasErrorReason();
-
-        /**
-         * <pre>
-         * Error Reason
-         * </pre>
-         * <p>
-         * <code>optional .ErrorReason error_reason = 4;</code>
-         */
-        cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason();
+    public static final int METHOD_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object methodName_;
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    public boolean hasMethodName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    public java.lang.String getMethodName() {
+      java.lang.Object ref = methodName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          methodName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * RPC method name
+     * </pre>
+     *
+     * <code>required string method_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMethodNameBytes() {
+      java.lang.Object ref = methodName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        methodName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    public static final int REQUEST_PROTO_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString requestProto_;
+    /**
+     * <pre>
+     * RPC request proto
+     * </pre>
+     *
+     * <code>required bytes request_proto = 3;</code>
+     */
+    public boolean hasRequestProto() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <pre>
+     * RPC request proto
+     * </pre>
+     *
+     * <code>required bytes request_proto = 3;</code>
+     */
+    public com.google.protobuf.ByteString getRequestProto() {
+      return requestProto_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasServiceName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMethodName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRequestProto()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, methodName_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, requestProto_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, methodName_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, requestProto_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Request)) {
+        return super.equals(obj);
+      }
+      cn.edu.bupt.hz.protobuf.generated.HProtos.Request other = (cn.edu.bupt.hz.protobuf.generated.HProtos.Request) obj;
+
+      boolean result = true;
+      result = result && (hasServiceName() == other.hasServiceName());
+      if (hasServiceName()) {
+        result = result && getServiceName()
+            .equals(other.getServiceName());
+      }
+      result = result && (hasMethodName() == other.hasMethodName());
+      if (hasMethodName()) {
+        result = result && getMethodName()
+            .equals(other.getMethodName());
+      }
+      result = result && (hasRequestProto() == other.hasRequestProto());
+      if (hasRequestProto()) {
+        result = result && getRequestProto()
+            .equals(other.getRequestProto());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasServiceName()) {
+        hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceName().hashCode();
+      }
+      if (hasMethodName()) {
+        hash = (37 * hash) + METHOD_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getMethodName().hashCode();
+      }
+      if (hasRequestProto()) {
+        hash = (37 * hash) + REQUEST_PROTO_FIELD_NUMBER;
+        hash = (53 * hash) + getRequestProto().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cn.edu.bupt.hz.protobuf.generated.HProtos.Request prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code Request}
      */
-    public static final class Request extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:Request)
-            RequestOrBuilder {
-        public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-        public static final int METHOD_NAME_FIELD_NUMBER = 2;
-        public static final int REQUEST_PROTO_FIELD_NUMBER = 3;
-        @java.lang.Deprecated
-        public static final com.google.protobuf.Parser<Request>
-                PARSER = new com.google.protobuf.AbstractParser<Request>() {
-            public Request parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Request(input, extensionRegistry);
-            }
-        };
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:Request)
-        private static final cn.edu.bupt.hz.protobuf.generated.HProtos.Request DEFAULT_INSTANCE;
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Request)
+        cn.edu.bupt.hz.protobuf.generated.HProtos.RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new cn.edu.bupt.hz.protobuf.generated.HProtos.Request();
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cn.edu.bupt.hz.protobuf.generated.HProtos.Request.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Request.Builder.class);
+      }
+
+      // Construct using cn.edu.bupt.hz.protobuf.generated.HProtos.Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      public Builder clear() {
+        super.clear();
+        serviceName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        methodName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        requestProto_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
 
-        private int bitField0_;
-        private volatile java.lang.Object serviceName_;
-        private volatile java.lang.Object methodName_;
-        private com.google.protobuf.ByteString requestProto_;
-        private byte memoizedIsInitialized = -1;
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
+      }
 
-        // Use Request.newBuilder() to construct.
-        private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstanceForType() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.Request.getDefaultInstance();
+      }
+
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Request build() {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private Request() {
-            serviceName_ = "";
-            methodName_ = "";
-            requestProto_ = com.google.protobuf.ByteString.EMPTY;
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Request buildPartial() {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Request result = new cn.edu.bupt.hz.protobuf.generated.HProtos.Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        private Request(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            com.google.protobuf.ByteString bs = input.readBytes();
-                            bitField0_ |= 0x00000001;
-                            serviceName_ = bs;
-                            break;
-                        }
-                        case 18: {
-                            com.google.protobuf.ByteString bs = input.readBytes();
-                            bitField0_ |= 0x00000002;
-                            methodName_ = bs;
-                            break;
-                        }
-                        case 26: {
-                            bitField0_ |= 0x00000004;
-                            requestProto_ = input.readBytes();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+        result.serviceName_ = serviceName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
+        result.methodName_ = methodName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
+        result.requestProto_ = requestProto_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Request) {
+          return mergeFrom((cn.edu.bupt.hz.protobuf.generated.HProtos.Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      public Builder mergeFrom(cn.edu.bupt.hz.protobuf.generated.HProtos.Request other) {
+        if (other == cn.edu.bupt.hz.protobuf.generated.HProtos.Request.getDefaultInstance()) return this;
+        if (other.hasServiceName()) {
+          bitField0_ |= 0x00000001;
+          serviceName_ = other.serviceName_;
+          onChanged();
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        if (other.hasMethodName()) {
+          bitField0_ |= 0x00000002;
+          methodName_ = other.methodName_;
+          onChanged();
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        if (other.hasRequestProto()) {
+          setRequestProto(other.getRequestProto());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      public final boolean isInitialized() {
+        if (!hasServiceName()) {
+          return false;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        if (!hasMethodName()) {
+          return false;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
+        if (!hasRequestProto()) {
+          return false;
         }
+        return true;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cn.edu.bupt.hz.protobuf.generated.HProtos.Request) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+      private int bitField0_;
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
+      private java.lang.Object serviceName_ = "";
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public boolean hasServiceName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public java.lang.String getServiceName() {
+        java.lang.Object ref = serviceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            serviceName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServiceNameBytes() {
+        java.lang.Object ref = serviceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serviceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public Builder setServiceName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        serviceName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public Builder clearServiceName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        serviceName_ = getDefaultInstance().getServiceName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC service full name
+       * </pre>
+       *
+       * <code>required string service_name = 1;</code>
+       */
+      public Builder setServiceNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        serviceName_ = value;
+        onChanged();
+        return this;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
+      private java.lang.Object methodName_ = "";
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public boolean hasMethodName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public java.lang.String getMethodName() {
+        java.lang.Object ref = methodName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            methodName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMethodNameBytes() {
+        java.lang.Object ref = methodName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          methodName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public Builder setMethodName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        methodName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public Builder clearMethodName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        methodName_ = getDefaultInstance().getMethodName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC method name
+       * </pre>
+       *
+       * <code>required string method_name = 2;</code>
+       */
+      public Builder setMethodNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        methodName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString requestProto_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * RPC request proto
+       * </pre>
+       *
+       * <code>required bytes request_proto = 3;</code>
+       */
+      public boolean hasRequestProto() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <pre>
+       * RPC request proto
+       * </pre>
+       *
+       * <code>required bytes request_proto = 3;</code>
+       */
+      public com.google.protobuf.ByteString getRequestProto() {
+        return requestProto_;
+      }
+      /**
+       * <pre>
+       * RPC request proto
+       * </pre>
+       *
+       * <code>required bytes request_proto = 3;</code>
+       */
+      public Builder setRequestProto(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        requestProto_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC request proto
+       * </pre>
+       *
+       * <code>required bytes request_proto = 3;</code>
+       */
+      public Builder clearRequestProto() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        requestProto_ = getDefaultInstance().getRequestProto();
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
 
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
 
-        public static Builder newBuilder(cn.edu.bupt.hz.protobuf.generated.HProtos.Request prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<Request> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            cn.edu.bupt.hz.protobuf.generated.HProtos.Request.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Request.Builder.class);
-        }
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        public boolean hasServiceName() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        public java.lang.String getServiceName() {
-            java.lang.Object ref = serviceName_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                if (bs.isValidUtf8()) {
-                    serviceName_ = s;
-                }
-                return s;
-            }
-        }
-
-        /**
-         * <pre>
-         * RPC service full name
-         * </pre>
-         * <p>
-         * <code>required string service_name = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getServiceNameBytes() {
-            java.lang.Object ref = serviceName_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                serviceName_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        public boolean hasMethodName() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        public java.lang.String getMethodName() {
-            java.lang.Object ref = methodName_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                if (bs.isValidUtf8()) {
-                    methodName_ = s;
-                }
-                return s;
-            }
-        }
-
-        /**
-         * <pre>
-         * RPC method name
-         * </pre>
-         * <p>
-         * <code>required string method_name = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-        getMethodNameBytes() {
-            java.lang.Object ref = methodName_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                methodName_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <pre>
-         * RPC request proto
-         * </pre>
-         * <p>
-         * <code>required bytes request_proto = 3;</code>
-         */
-        public boolean hasRequestProto() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <pre>
-         * RPC request proto
-         * </pre>
-         * <p>
-         * <code>required bytes request_proto = 3;</code>
-         */
-        public com.google.protobuf.ByteString getRequestProto() {
-            return requestProto_;
-        }
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            if (!hasServiceName()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasMethodName()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasRequestProto()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceName_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, methodName_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeBytes(3, requestProto_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceName_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, methodName_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeBytesSize(3, requestProto_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Request)) {
-                return super.equals(obj);
-            }
-            cn.edu.bupt.hz.protobuf.generated.HProtos.Request other = (cn.edu.bupt.hz.protobuf.generated.HProtos.Request) obj;
-
-            boolean result = true;
-            result = result && (hasServiceName() == other.hasServiceName());
-            if (hasServiceName()) {
-                result = result && getServiceName()
-                        .equals(other.getServiceName());
-            }
-            result = result && (hasMethodName() == other.hasMethodName());
-            if (hasMethodName()) {
-                result = result && getMethodName()
-                        .equals(other.getMethodName());
-            }
-            result = result && (hasRequestProto() == other.hasRequestProto());
-            if (hasRequestProto()) {
-                result = result && getRequestProto()
-                        .equals(other.getRequestProto());
-            }
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasServiceName()) {
-                hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
-                hash = (53 * hash) + getServiceName().hashCode();
-            }
-            if (hasMethodName()) {
-                hash = (37 * hash) + METHOD_NAME_FIELD_NUMBER;
-                hash = (53 * hash) + getMethodName().hashCode();
-            }
-            if (hasRequestProto()) {
-                hash = (37 * hash) + REQUEST_PROTO_FIELD_NUMBER;
-                hash = (53 * hash) + getRequestProto().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Request> getParserForType() {
-            return PARSER;
-        }
-
-        public cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code Request}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:Request)
-                cn.edu.bupt.hz.protobuf.generated.HProtos.RequestOrBuilder {
-            private int bitField0_;
-            private java.lang.Object serviceName_ = "";
-            private java.lang.Object methodName_ = "";
-            private com.google.protobuf.ByteString requestProto_ = com.google.protobuf.ByteString.EMPTY;
-
-            // Construct using cn.edu.bupt.hz.protobuf.generated.HProtos.Request.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                cn.edu.bupt.hz.protobuf.generated.HProtos.Request.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Request.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            public Builder clear() {
-                super.clear();
-                serviceName_ = "";
-                bitField0_ = (bitField0_ & ~0x00000001);
-                methodName_ = "";
-                bitField0_ = (bitField0_ & ~0x00000002);
-                requestProto_ = com.google.protobuf.ByteString.EMPTY;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Request_descriptor;
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstanceForType() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.Request.getDefaultInstance();
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Request build() {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Request result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Request buildPartial() {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Request result = new cn.edu.bupt.hz.protobuf.generated.HProtos.Request(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.serviceName_ = serviceName_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.methodName_ = methodName_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.requestProto_ = requestProto_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Request) {
-                    return mergeFrom((cn.edu.bupt.hz.protobuf.generated.HProtos.Request) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(cn.edu.bupt.hz.protobuf.generated.HProtos.Request other) {
-                if (other == cn.edu.bupt.hz.protobuf.generated.HProtos.Request.getDefaultInstance()) return this;
-                if (other.hasServiceName()) {
-                    bitField0_ |= 0x00000001;
-                    serviceName_ = other.serviceName_;
-                    onChanged();
-                }
-                if (other.hasMethodName()) {
-                    bitField0_ |= 0x00000002;
-                    methodName_ = other.methodName_;
-                    onChanged();
-                }
-                if (other.hasRequestProto()) {
-                    setRequestProto(other.getRequestProto());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasServiceName()) {
-                    return false;
-                }
-                if (!hasMethodName()) {
-                    return false;
-                }
-                if (!hasRequestProto()) {
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Request parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (cn.edu.bupt.hz.protobuf.generated.HProtos.Request) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public boolean hasServiceName() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public java.lang.String getServiceName() {
-                java.lang.Object ref = serviceName_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        serviceName_ = s;
-                    }
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public Builder setServiceName(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                serviceName_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getServiceNameBytes() {
-                java.lang.Object ref = serviceName_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    serviceName_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public Builder setServiceNameBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                serviceName_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC service full name
-             * </pre>
-             * <p>
-             * <code>required string service_name = 1;</code>
-             */
-            public Builder clearServiceName() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                serviceName_ = getDefaultInstance().getServiceName();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public boolean hasMethodName() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public java.lang.String getMethodName() {
-                java.lang.Object ref = methodName_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        methodName_ = s;
-                    }
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public Builder setMethodName(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000002;
-                methodName_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getMethodNameBytes() {
-                java.lang.Object ref = methodName_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    methodName_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public Builder setMethodNameBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000002;
-                methodName_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC method name
-             * </pre>
-             * <p>
-             * <code>required string method_name = 2;</code>
-             */
-            public Builder clearMethodName() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                methodName_ = getDefaultInstance().getMethodName();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC request proto
-             * </pre>
-             * <p>
-             * <code>required bytes request_proto = 3;</code>
-             */
-            public boolean hasRequestProto() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <pre>
-             * RPC request proto
-             * </pre>
-             * <p>
-             * <code>required bytes request_proto = 3;</code>
-             */
-            public com.google.protobuf.ByteString getRequestProto() {
-                return requestProto_;
-            }
-
-            /**
-             * <pre>
-             * RPC request proto
-             * </pre>
-             * <p>
-             * <code>required bytes request_proto = 3;</code>
-             */
-            public Builder setRequestProto(com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000004;
-                requestProto_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC request proto
-             * </pre>
-             * <p>
-             * <code>required bytes request_proto = 3;</code>
-             */
-            public Builder clearRequestProto() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                requestProto_ = getDefaultInstance().getRequestProto();
-                onChanged();
-                return this;
-            }
-
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:Request)
-        }
-
+      // @@protoc_insertion_point(builder_scope:Request)
     }
 
+    // @@protoc_insertion_point(class_scope:Request)
+    private static final cn.edu.bupt.hz.protobuf.generated.HProtos.Request DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cn.edu.bupt.hz.protobuf.generated.HProtos.Request();
+    }
+
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Request>
+        PARSER = new com.google.protobuf.AbstractParser<Request>() {
+      public Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Request(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Request> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Request> getParserForType() {
+      return PARSER;
+    }
+
+    public cn.edu.bupt.hz.protobuf.generated.HProtos.Request getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * RPC response proto
+     * </pre>
+     *
+     * <code>optional bytes response_proto = 1;</code>
+     */
+    boolean hasResponseProto();
+    /**
+     * <pre>
+     * RPC response proto
+     * </pre>
+     *
+     * <code>optional bytes response_proto = 1;</code>
+     */
+    com.google.protobuf.ByteString getResponseProto();
+
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    boolean hasError();
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    java.lang.String getError();
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+
+    /**
+     * <pre>
+     * Was callback invoked
+     * </pre>
+     *
+     * <code>optional bool callback = 3 [default = false];</code>
+     */
+    boolean hasCallback();
+    /**
+     * <pre>
+     * Was callback invoked
+     * </pre>
+     *
+     * <code>optional bool callback = 3 [default = false];</code>
+     */
+    boolean getCallback();
+
+    /**
+     * <pre>
+     * Error Reason
+     * </pre>
+     *
+     * <code>optional .ErrorReason error_reason = 4;</code>
+     */
+    boolean hasErrorReason();
+    /**
+     * <pre>
+     * Error Reason
+     * </pre>
+     *
+     * <code>optional .ErrorReason error_reason = 4;</code>
+     */
+    cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason();
+  }
+  /**
+   * Protobuf type {@code Response}
+   */
+  public  static final class Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Response)
+      ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Response.newBuilder() to construct.
+    private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Response() {
+      responseProto_ = com.google.protobuf.ByteString.EMPTY;
+      error_ = "";
+      callback_ = false;
+      errorReason_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              responseProto_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              error_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              callback_ = input.readBool();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason value = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                errorReason_ = rawValue;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cn.edu.bupt.hz.protobuf.generated.HProtos.Response.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Response.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int RESPONSE_PROTO_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString responseProto_;
+    /**
+     * <pre>
+     * RPC response proto
+     * </pre>
+     *
+     * <code>optional bytes response_proto = 1;</code>
+     */
+    public boolean hasResponseProto() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     * RPC response proto
+     * </pre>
+     *
+     * <code>optional bytes response_proto = 1;</code>
+     */
+    public com.google.protobuf.ByteString getResponseProto() {
+      return responseProto_;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          error_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Error, if any
+     * </pre>
+     *
+     * <code>optional string error = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CALLBACK_FIELD_NUMBER = 3;
+    private boolean callback_;
+    /**
+     * <pre>
+     * Was callback invoked
+     * </pre>
+     *
+     * <code>optional bool callback = 3 [default = false];</code>
+     */
+    public boolean hasCallback() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <pre>
+     * Was callback invoked
+     * </pre>
+     *
+     * <code>optional bool callback = 3 [default = false];</code>
+     */
+    public boolean getCallback() {
+      return callback_;
+    }
+
+    public static final int ERROR_REASON_FIELD_NUMBER = 4;
+    private int errorReason_;
+    /**
+     * <pre>
+     * Error Reason
+     * </pre>
+     *
+     * <code>optional .ErrorReason error_reason = 4;</code>
+     */
+    public boolean hasErrorReason() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <pre>
+     * Error Reason
+     * </pre>
+     *
+     * <code>optional .ErrorReason error_reason = 4;</code>
+     */
+    public cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason() {
+      cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason result = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(errorReason_);
+      return result == null ? cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.BAD_REQUEST_DATA : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, responseProto_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBool(3, callback_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, errorReason_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, responseProto_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, callback_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, errorReason_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Response)) {
+        return super.equals(obj);
+      }
+      cn.edu.bupt.hz.protobuf.generated.HProtos.Response other = (cn.edu.bupt.hz.protobuf.generated.HProtos.Response) obj;
+
+      boolean result = true;
+      result = result && (hasResponseProto() == other.hasResponseProto());
+      if (hasResponseProto()) {
+        result = result && getResponseProto()
+            .equals(other.getResponseProto());
+      }
+      result = result && (hasError() == other.hasError());
+      if (hasError()) {
+        result = result && getError()
+            .equals(other.getError());
+      }
+      result = result && (hasCallback() == other.hasCallback());
+      if (hasCallback()) {
+        result = result && (getCallback()
+            == other.getCallback());
+      }
+      result = result && (hasErrorReason() == other.hasErrorReason());
+      if (hasErrorReason()) {
+        result = result && errorReason_ == other.errorReason_;
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResponseProto()) {
+        hash = (37 * hash) + RESPONSE_PROTO_FIELD_NUMBER;
+        hash = (53 * hash) + getResponseProto().hashCode();
+      }
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+      }
+      if (hasCallback()) {
+        hash = (37 * hash) + CALLBACK_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getCallback());
+      }
+      if (hasErrorReason()) {
+        hash = (37 * hash) + ERROR_REASON_FIELD_NUMBER;
+        hash = (53 * hash) + errorReason_;
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cn.edu.bupt.hz.protobuf.generated.HProtos.Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code Response}
      */
-    public static final class Response extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:Response)
-            ResponseOrBuilder {
-        public static final int RESPONSE_PROTO_FIELD_NUMBER = 1;
-        public static final int ERROR_FIELD_NUMBER = 2;
-        public static final int CALLBACK_FIELD_NUMBER = 3;
-        public static final int ERROR_REASON_FIELD_NUMBER = 4;
-        @java.lang.Deprecated
-        public static final com.google.protobuf.Parser<Response>
-                PARSER = new com.google.protobuf.AbstractParser<Response>() {
-            public Response parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Response(input, extensionRegistry);
-            }
-        };
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:Response)
-        private static final cn.edu.bupt.hz.protobuf.generated.HProtos.Response DEFAULT_INSTANCE;
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Response)
+        cn.edu.bupt.hz.protobuf.generated.HProtos.ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new cn.edu.bupt.hz.protobuf.generated.HProtos.Response();
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cn.edu.bupt.hz.protobuf.generated.HProtos.Response.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Response.Builder.class);
+      }
+
+      // Construct using cn.edu.bupt.hz.protobuf.generated.HProtos.Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      public Builder clear() {
+        super.clear();
+        responseProto_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        error_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        callback_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        errorReason_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
 
-        private int bitField0_;
-        private com.google.protobuf.ByteString responseProto_;
-        private volatile java.lang.Object error_;
-        private boolean callback_;
-        private int errorReason_;
-        private byte memoizedIsInitialized = -1;
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
+      }
 
-        // Use Response.newBuilder() to construct.
-        private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstanceForType() {
+        return cn.edu.bupt.hz.protobuf.generated.HProtos.Response.getDefaultInstance();
+      }
+
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Response build() {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private Response() {
-            responseProto_ = com.google.protobuf.ByteString.EMPTY;
-            error_ = "";
-            callback_ = false;
-            errorReason_ = 0;
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.Response buildPartial() {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Response result = new cn.edu.bupt.hz.protobuf.generated.HProtos.Response(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-
-        private Response(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            responseProto_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            com.google.protobuf.ByteString bs = input.readBytes();
-                            bitField0_ |= 0x00000002;
-                            error_ = bs;
-                            break;
-                        }
-                        case 24: {
-                            bitField0_ |= 0x00000004;
-                            callback_ = input.readBool();
-                            break;
-                        }
-                        case 32: {
-                            int rawValue = input.readEnum();
-                            cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason value = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(4, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000008;
-                                errorReason_ = rawValue;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+        result.responseProto_ = responseProto_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
+        result.error_ = error_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        result.callback_ = callback_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
         }
+        result.errorReason_ = errorReason_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Response) {
+          return mergeFrom((cn.edu.bupt.hz.protobuf.generated.HProtos.Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      public Builder mergeFrom(cn.edu.bupt.hz.protobuf.generated.HProtos.Response other) {
+        if (other == cn.edu.bupt.hz.protobuf.generated.HProtos.Response.getDefaultInstance()) return this;
+        if (other.hasResponseProto()) {
+          setResponseProto(other.getResponseProto());
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        if (other.hasError()) {
+          bitField0_ |= 0x00000002;
+          error_ = other.error_;
+          onChanged();
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        if (other.hasCallback()) {
+          setCallback(other.getCallback());
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        if (other.hasErrorReason()) {
+          setErrorReason(other.getErrorReason());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cn.edu.bupt.hz.protobuf.generated.HProtos.Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+      private int bitField0_;
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
+      private com.google.protobuf.ByteString responseProto_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * RPC response proto
+       * </pre>
+       *
+       * <code>optional bytes response_proto = 1;</code>
+       */
+      public boolean hasResponseProto() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * RPC response proto
+       * </pre>
+       *
+       * <code>optional bytes response_proto = 1;</code>
+       */
+      public com.google.protobuf.ByteString getResponseProto() {
+        return responseProto_;
+      }
+      /**
+       * <pre>
+       * RPC response proto
+       * </pre>
+       *
+       * <code>optional bytes response_proto = 1;</code>
+       */
+      public Builder setResponseProto(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        responseProto_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RPC response proto
+       * </pre>
+       *
+       * <code>optional bytes response_proto = 1;</code>
+       */
+      public Builder clearResponseProto() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        responseProto_ = getDefaultInstance().getResponseProto();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            error_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
+      }
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public Builder clearError() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Error, if any
+       * </pre>
+       *
+       * <code>optional string error = 2;</code>
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        error_ = value;
+        onChanged();
+        return this;
+      }
 
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      private boolean callback_ ;
+      /**
+       * <pre>
+       * Was callback invoked
+       * </pre>
+       *
+       * <code>optional bool callback = 3 [default = false];</code>
+       */
+      public boolean hasCallback() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <pre>
+       * Was callback invoked
+       * </pre>
+       *
+       * <code>optional bool callback = 3 [default = false];</code>
+       */
+      public boolean getCallback() {
+        return callback_;
+      }
+      /**
+       * <pre>
+       * Was callback invoked
+       * </pre>
+       *
+       * <code>optional bool callback = 3 [default = false];</code>
+       */
+      public Builder setCallback(boolean value) {
+        bitField0_ |= 0x00000004;
+        callback_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Was callback invoked
+       * </pre>
+       *
+       * <code>optional bool callback = 3 [default = false];</code>
+       */
+      public Builder clearCallback() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        callback_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int errorReason_ = 0;
+      /**
+       * <pre>
+       * Error Reason
+       * </pre>
+       *
+       * <code>optional .ErrorReason error_reason = 4;</code>
+       */
+      public boolean hasErrorReason() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <pre>
+       * Error Reason
+       * </pre>
+       *
+       * <code>optional .ErrorReason error_reason = 4;</code>
+       */
+      public cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason() {
+        cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason result = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(errorReason_);
+        return result == null ? cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.BAD_REQUEST_DATA : result;
+      }
+      /**
+       * <pre>
+       * Error Reason
+       * </pre>
+       *
+       * <code>optional .ErrorReason error_reason = 4;</code>
+       */
+      public Builder setErrorReason(cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(cn.edu.bupt.hz.protobuf.generated.HProtos.Response prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<Response> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            cn.edu.bupt.hz.protobuf.generated.HProtos.Response.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Response.Builder.class);
-        }
-
-        /**
-         * <pre>
-         * RPC response proto
-         * </pre>
-         * <p>
-         * <code>optional bytes response_proto = 1;</code>
-         */
-        public boolean hasResponseProto() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <pre>
-         * RPC response proto
-         * </pre>
-         * <p>
-         * <code>optional bytes response_proto = 1;</code>
-         */
-        public com.google.protobuf.ByteString getResponseProto() {
-            return responseProto_;
-        }
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        public boolean hasError() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        public java.lang.String getError() {
-            java.lang.Object ref = error_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                if (bs.isValidUtf8()) {
-                    error_ = s;
-                }
-                return s;
-            }
-        }
-
-        /**
-         * <pre>
-         * Error, if any
-         * </pre>
-         * <p>
-         * <code>optional string error = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-        getErrorBytes() {
-            java.lang.Object ref = error_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                error_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <pre>
-         * Was callback invoked
-         * </pre>
-         * <p>
-         * <code>optional bool callback = 3 [default = false];</code>
-         */
-        public boolean hasCallback() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <pre>
-         * Was callback invoked
-         * </pre>
-         * <p>
-         * <code>optional bool callback = 3 [default = false];</code>
-         */
-        public boolean getCallback() {
-            return callback_;
-        }
-
-        /**
-         * <pre>
-         * Error Reason
-         * </pre>
-         * <p>
-         * <code>optional .ErrorReason error_reason = 4;</code>
-         */
-        public boolean hasErrorReason() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-
-        /**
-         * <pre>
-         * Error Reason
-         * </pre>
-         * <p>
-         * <code>optional .ErrorReason error_reason = 4;</code>
-         */
-        public cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason() {
-            cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason result = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(errorReason_);
-            return result == null ? cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.BAD_REQUEST_DATA : result;
-        }
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeBytes(1, responseProto_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeBool(3, callback_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeEnum(4, errorReason_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeBytesSize(1, responseProto_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeBoolSize(3, callback_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeEnumSize(4, errorReason_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Response)) {
-                return super.equals(obj);
-            }
-            cn.edu.bupt.hz.protobuf.generated.HProtos.Response other = (cn.edu.bupt.hz.protobuf.generated.HProtos.Response) obj;
-
-            boolean result = true;
-            result = result && (hasResponseProto() == other.hasResponseProto());
-            if (hasResponseProto()) {
-                result = result && getResponseProto()
-                        .equals(other.getResponseProto());
-            }
-            result = result && (hasError() == other.hasError());
-            if (hasError()) {
-                result = result && getError()
-                        .equals(other.getError());
-            }
-            result = result && (hasCallback() == other.hasCallback());
-            if (hasCallback()) {
-                result = result && (getCallback()
-                        == other.getCallback());
-            }
-            result = result && (hasErrorReason() == other.hasErrorReason());
-            if (hasErrorReason()) {
-                result = result && errorReason_ == other.errorReason_;
-            }
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (hasResponseProto()) {
-                hash = (37 * hash) + RESPONSE_PROTO_FIELD_NUMBER;
-                hash = (53 * hash) + getResponseProto().hashCode();
-            }
-            if (hasError()) {
-                hash = (37 * hash) + ERROR_FIELD_NUMBER;
-                hash = (53 * hash) + getError().hashCode();
-            }
-            if (hasCallback()) {
-                hash = (37 * hash) + CALLBACK_FIELD_NUMBER;
-                hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-                        getCallback());
-            }
-            if (hasErrorReason()) {
-                hash = (37 * hash) + ERROR_REASON_FIELD_NUMBER;
-                hash = (53 * hash) + errorReason_;
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Response> getParserForType() {
-            return PARSER;
-        }
-
-        public cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code Response}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:Response)
-                cn.edu.bupt.hz.protobuf.generated.HProtos.ResponseOrBuilder {
-            private int bitField0_;
-            private com.google.protobuf.ByteString responseProto_ = com.google.protobuf.ByteString.EMPTY;
-            private java.lang.Object error_ = "";
-            private boolean callback_;
-            private int errorReason_ = 0;
-
-            // Construct using cn.edu.bupt.hz.protobuf.generated.HProtos.Response.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                cn.edu.bupt.hz.protobuf.generated.HProtos.Response.class, cn.edu.bupt.hz.protobuf.generated.HProtos.Response.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            public Builder clear() {
-                super.clear();
-                responseProto_ = com.google.protobuf.ByteString.EMPTY;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                error_ = "";
-                bitField0_ = (bitField0_ & ~0x00000002);
-                callback_ = false;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                errorReason_ = 0;
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.internal_static_Response_descriptor;
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstanceForType() {
-                return cn.edu.bupt.hz.protobuf.generated.HProtos.Response.getDefaultInstance();
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Response build() {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Response result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.Response buildPartial() {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Response result = new cn.edu.bupt.hz.protobuf.generated.HProtos.Response(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.responseProto_ = responseProto_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.error_ = error_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.callback_ = callback_;
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                result.errorReason_ = errorReason_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder clone() {
-                return (Builder) super.clone();
-            }
-
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return (Builder) super.setField(field, value);
-            }
-
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return (Builder) super.clearField(field);
-            }
-
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return (Builder) super.clearOneof(oneof);
-            }
-
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return (Builder) super.setRepeatedField(field, index, value);
-            }
-
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return (Builder) super.addRepeatedField(field, value);
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof cn.edu.bupt.hz.protobuf.generated.HProtos.Response) {
-                    return mergeFrom((cn.edu.bupt.hz.protobuf.generated.HProtos.Response) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(cn.edu.bupt.hz.protobuf.generated.HProtos.Response other) {
-                if (other == cn.edu.bupt.hz.protobuf.generated.HProtos.Response.getDefaultInstance()) return this;
-                if (other.hasResponseProto()) {
-                    setResponseProto(other.getResponseProto());
-                }
-                if (other.hasError()) {
-                    bitField0_ |= 0x00000002;
-                    error_ = other.error_;
-                    onChanged();
-                }
-                if (other.hasCallback()) {
-                    setCallback(other.getCallback());
-                }
-                if (other.hasErrorReason()) {
-                    setErrorReason(other.getErrorReason());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.Response parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (cn.edu.bupt.hz.protobuf.generated.HProtos.Response) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC response proto
-             * </pre>
-             * <p>
-             * <code>optional bytes response_proto = 1;</code>
-             */
-            public boolean hasResponseProto() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <pre>
-             * RPC response proto
-             * </pre>
-             * <p>
-             * <code>optional bytes response_proto = 1;</code>
-             */
-            public com.google.protobuf.ByteString getResponseProto() {
-                return responseProto_;
-            }
-
-            /**
-             * <pre>
-             * RPC response proto
-             * </pre>
-             * <p>
-             * <code>optional bytes response_proto = 1;</code>
-             */
-            public Builder setResponseProto(com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                responseProto_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * RPC response proto
-             * </pre>
-             * <p>
-             * <code>optional bytes response_proto = 1;</code>
-             */
-            public Builder clearResponseProto() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                responseProto_ = getDefaultInstance().getResponseProto();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public boolean hasError() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public java.lang.String getError() {
-                java.lang.Object ref = error_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        error_ = s;
-                    }
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public Builder setError(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000002;
-                error_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getErrorBytes() {
-                java.lang.Object ref = error_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    error_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public Builder setErrorBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000002;
-                error_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Error, if any
-             * </pre>
-             * <p>
-             * <code>optional string error = 2;</code>
-             */
-            public Builder clearError() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                error_ = getDefaultInstance().getError();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Was callback invoked
-             * </pre>
-             * <p>
-             * <code>optional bool callback = 3 [default = false];</code>
-             */
-            public boolean hasCallback() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <pre>
-             * Was callback invoked
-             * </pre>
-             * <p>
-             * <code>optional bool callback = 3 [default = false];</code>
-             */
-            public boolean getCallback() {
-                return callback_;
-            }
-
-            /**
-             * <pre>
-             * Was callback invoked
-             * </pre>
-             * <p>
-             * <code>optional bool callback = 3 [default = false];</code>
-             */
-            public Builder setCallback(boolean value) {
-                bitField0_ |= 0x00000004;
-                callback_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Was callback invoked
-             * </pre>
-             * <p>
-             * <code>optional bool callback = 3 [default = false];</code>
-             */
-            public Builder clearCallback() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                callback_ = false;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Error Reason
-             * </pre>
-             * <p>
-             * <code>optional .ErrorReason error_reason = 4;</code>
-             */
-            public boolean hasErrorReason() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <pre>
-             * Error Reason
-             * </pre>
-             * <p>
-             * <code>optional .ErrorReason error_reason = 4;</code>
-             */
-            public cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason getErrorReason() {
-                cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason result = cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.valueOf(errorReason_);
-                return result == null ? cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason.BAD_REQUEST_DATA : result;
-            }
-
-            /**
-             * <pre>
-             * Error Reason
-             * </pre>
-             * <p>
-             * <code>optional .ErrorReason error_reason = 4;</code>
-             */
-            public Builder setErrorReason(cn.edu.bupt.hz.protobuf.generated.HProtos.ErrorReason value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000008;
-                errorReason_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <pre>
-             * Error Reason
-             * </pre>
-             * <p>
-             * <code>optional .ErrorReason error_reason = 4;</code>
-             */
-            public Builder clearErrorReason() {
-                bitField0_ = (bitField0_ & ~0x00000008);
-                errorReason_ = 0;
-                onChanged();
-                return this;
-            }
-
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:Response)
-        }
-
+        bitField0_ |= 0x00000008;
+        errorReason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Error Reason
+       * </pre>
+       *
+       * <code>optional .ErrorReason error_reason = 4;</code>
+       */
+      public Builder clearErrorReason() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        errorReason_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Response)
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(class_scope:Response)
+    private static final cn.edu.bupt.hz.protobuf.generated.HProtos.Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cn.edu.bupt.hz.protobuf.generated.HProtos.Response();
+    }
+
+    public static cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Response>
+        PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      public Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Response> getParserForType() {
+      return PARSER;
+    }
+
+    public cn.edu.bupt.hz.protobuf.generated.HProtos.Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Request_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Response_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Response_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\rHProtos.proto\"K\n\007Request\022\024\n\014service_na" +
+      "me\030\001 \002(\t\022\023\n\013method_name\030\002 \002(\t\022\025\n\rrequest" +
+      "_proto\030\003 \002(\014\"n\n\010Response\022\026\n\016response_pro" +
+      "to\030\001 \001(\014\022\r\n\005error\030\002 \001(\t\022\027\n\010callback\030\003 \001(" +
+      "\010:\005false\022\"\n\014error_reason\030\004 \001(\0162\014.ErrorRe" +
+      "ason*\331\001\n\013ErrorReason\022\024\n\020BAD_REQUEST_DATA" +
+      "\020\000\022\025\n\021BAD_REQUEST_PROTO\020\001\022\025\n\021SERVICE_NOT" +
+      "_FOUND\020\002\022\024\n\020METHOD_NOT_FOUND\020\003\022\r\n\tRPC_ER" +
+      "ROR\020\004\022\016\n\nRPC_FAILED\020\005\022\031\n\025INVALID_REQUEST" +
+      "_PROTO\020\006\022\026\n\022BAD_RESPONSE_PROTO\020\007\022\020\n\014UNKN" +
+      "OWN_HOST\020\010\022\014\n\010IO_ERROR\020\tB1\n!cn.edu.bupt." +
+      "hz.protobuf.generatedB\007HProtosH\001\240\001\001"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
+    internal_static_Request_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Request_descriptor,
+        new java.lang.String[] { "ServiceName", "MethodName", "RequestProto", });
+    internal_static_Response_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Response_descriptor,
+        new java.lang.String[] { "ResponseProto", "Error", "Callback", "ErrorReason", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

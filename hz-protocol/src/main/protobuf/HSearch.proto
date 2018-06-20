@@ -1,14 +1,19 @@
 syntax = "proto2";
 
 option java_package = "cn.edu.bupt.hz.protobuf.generated";
-option java_outer_classname = "HProtos";
+option java_outer_classname = "SearchProtos";
+option java_generic_services = true;
 option java_generate_equals_and_hash = true;
 option optimize_for = SPEED;
 
-message Request {
+message SearchRequest {
     required string name = 1;
 }
 
-message Response {
+message SearchResponse {
     required string state = 1;
+}
+
+service SearchSearch {
+    rpc search (SearchRequest) returns (SearchResponse);
 }
